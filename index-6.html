@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Satyam Mobile Shop - Smartphones, accessories, exchange offers and easy EMI options. Shop Apple, Samsung, OnePlus, vivo, OPPO, realme, Redmi and more." />
+  <meta name="keywords" content="Satyam Mobile Shop, mobile shop, smartphone, iPhone, Samsung, OnePlus, vivo, OPPO, realme, Redmi, Bajaj Finance EMI, mobile accessories" />
+  <meta property="og:title" content="Satyam Mobile Shop | Latest Smartphones & Easy EMI" />
+  <meta property="og:description" content="Latest smartphones, accessories, exchange offers and easy EMI options at Satyam Mobile Shop." />
+  <meta property="og:type" content="website" />
+  <title>Satyam Mobile Shop | Latest Smartphones & Easy EMI</title>
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0d1a2c;
+      --panel-2:#111f35;
+      --text:#f8fbff;
+      --muted:#9dafc7;
+      --line:rgba(255,255,255,.09);
+      --brand:#ff3d54;
+      --brand-2:#ff8a00;
+      --green:#21c86a;
+      --blue:#3b82f6;
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(59,130,246,.14), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(255,61,84,.12), transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    img{max-width:100%}
+    .container{width:min(var(--max),calc(100% - 32px));margin:auto}
+    .top-strip{
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      color:white;
+      text-align:center;
+      padding:8px 14px;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.15px;
+    }
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(7,17,31,.82);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .logo-mark{
+      width:46px;height:46px;border-radius:15px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      box-shadow:0 10px 30px rgba(255,61,84,.26);
+      font-weight:1000;font-size:17px;letter-spacing:-1px;
+    }
+    .logo-copy b{display:block;font-size:18px;line-height:1.05}
+    .logo-copy span{display:block;color:var(--muted);font-size:11px;letter-spacing:1.4px;margin-top:4px}
+    nav{display:flex;align-items:center;gap:22px;color:#dbe7f5;font-size:14px;font-weight:700}
+    nav a:hover{color:white}
+    .nav-cta,.btn{
+      border:0;border-radius:14px;padding:13px 18px;
+      font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      transition:.2s ease;
+    }
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px)}
+    .nav-cta,.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white}
+    .btn-secondary{background:#16263d;color:white;border:1px solid var(--line)}
+    .menu-btn{display:none;background:#142339;color:white;border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+
+    .hero{padding:68px 0 34px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
+      background:rgba(33,200,106,.1);border:1px solid rgba(33,200,106,.24);
+      color:#8ff0b7;font-weight:800;font-size:12px;letter-spacing:.4px;
+    }
+    h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:18px 0}
+    h1 span{
+      background:linear-gradient(90deg,#fff 5%,#ffb057 47%,#ff5368 95%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{font-size:18px;color:#b8c7da;max-width:640px;margin:0 0 26px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#cbd8e8;font-size:13px}
+    .tick::before{content:"✓";color:var(--green);font-weight:1000;margin-right:7px}
+    .hero-card{
+      border-radius:32px;padding:24px;min-height:480px;position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 75% 18%,rgba(255,138,0,.35),transparent 30%),
+        radial-gradient(circle at 25% 75%,rgba(59,130,246,.24),transparent 30%),
+        linear-gradient(145deg,#12233a,#0b1728);
+      border:1px solid var(--line);box-shadow:var(--shadow);
+    }
+    .offer-pill{
+      display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;color:#0b1220;
+      font-weight:950;font-size:12px;position:relative;z-index:2;
+    }
+    .phone-stage{position:absolute;inset:78px 12px 32px;display:grid;place-items:center}
+    .phone{
+      width:220px;height:410px;border-radius:42px;background:#05070b;border:6px solid #26354a;
+      box-shadow:0 30px 70px rgba(0,0,0,.5);transform:rotate(-7deg);position:relative;overflow:hidden;
+    }
+    .screen{
+      position:absolute;inset:7px;border-radius:32px;overflow:hidden;
+      background:
+        radial-gradient(circle at 70% 25%,rgba(255,255,255,.85),transparent 7%),
+        radial-gradient(circle at 63% 38%,rgba(255,83,104,.8),transparent 22%),
+        radial-gradient(circle at 37% 63%,rgba(59,130,246,.95),transparent 30%),
+        linear-gradient(145deg,#241136,#051020);
+    }
+    .dynamic{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:76px;height:23px;border-radius:14px;background:#020305}
+    .phone-small{
+      position:absolute;width:145px;height:280px;border-radius:34px;background:#eceff4;border:5px solid #d7dce6;
+      right:20px;bottom:22px;transform:rotate(10deg);box-shadow:0 25px 60px rgba(0,0,0,.35);
+    }
+    .camera{position:absolute;left:15px;top:16px;width:62px;height:62px;border-radius:20px;background:#dfe3eb;display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:8px}
+    .lens{border-radius:50%;background:#111827;border:4px solid #384152}
+    .floating-offer{
+      position:absolute;right:16px;top:98px;width:170px;padding:16px;border-radius:18px;
+      background:rgba(7,17,31,.82);backdrop-filter:blur(12px);border:1px solid var(--line);z-index:3;
+    }
+    .floating-offer small{display:block;color:var(--muted)}
+    .floating-offer b{font-size:22px}
+
+    .brands{padding:22px 0 12px}
+    .brand-row{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+    .brand-chip{
+      padding:16px 8px;text-align:center;border-radius:16px;background:rgba(255,255,255,.035);
+      border:1px solid var(--line);font-weight:900;color:#dce7f5;font-size:13px;
+    }
+
+    section{padding:76px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:26px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-1.8px;margin:0}
+    .section-head p{margin:9px 0 0;color:var(--muted);max-width:650px}
+    .label{color:#ff9c52;font-weight:900;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
+
+    .catalog-tools{display:grid;grid-template-columns:1fr auto auto;gap:10px;margin:20px 0 24px}
+    .searchbox,input,select{
+      width:100%;background:#101f33;color:white;border:1px solid var(--line);outline:none;
+      border-radius:14px;padding:14px 15px;
+    }
+    select{width:auto;min-width:160px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .product{
+      border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#0e1d30,#0a1626);
+      transition:.2s ease;position:relative;
+    }
+    .product:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.2);box-shadow:var(--shadow)}
+    .product-visual{
+      height:220px;display:grid;place-items:center;position:relative;overflow:hidden;
+      background:radial-gradient(circle at 50% 50%,rgba(59,130,246,.16),transparent 50%),#0c192a;
+    }
+
+    /* REAL PRODUCT IMAGE SUPPORT */
+    .real-phone-image{
+      width:100%;
+      height:100%;
+      max-width:190px;
+      max-height:205px;
+      object-fit:contain;
+      display:block;
+      position:relative;
+      z-index:2;
+      filter:drop-shadow(0 20px 24px rgba(0,0,0,.28));
+      transition:transform .28s ease;
+    }
+    .product:hover .real-phone-image{transform:scale(1.055)}
+    .product-image-fallback{
+      width:105px;height:182px;border-radius:24px;background:#080b10;
+      border:4px solid #37475f;position:relative;
+      box-shadow:0 20px 45px rgba(0,0,0,.4);
+      display:none;
+    }
+    .product-image-fallback::before{
+      content:"";position:absolute;inset:6px;border-radius:17px;
+      background:linear-gradient(145deg,#ff4e50,#1fddff);
+    }
+    .product-image-fallback::after{
+      content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);
+      width:34px;height:9px;border-radius:10px;background:#050608;
+    }
+
+    .product-phone{
+      width:105px;height:182px;border-radius:24px;background:#080b10;border:4px solid #37475f;position:relative;box-shadow:0 20px 45px rgba(0,0,0,.4);
+    }
+    .product-phone::before{
+      content:"";position:absolute;inset:6px;border-radius:17px;background:var(--wallpaper,linear-gradient(145deg,#ff4e50,#1fddff));
+    }
+    .product-phone::after{
+      content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);width:34px;height:9px;border-radius:10px;background:#050608;
+    }
+    .badge{
+      position:absolute;top:12px;left:12px;border-radius:999px;padding:6px 9px;background:#fff;color:#07111f;font-size:10px;font-weight:950;z-index:2;
+    }
+    .product-body{padding:17px}
+    .product-brand{font-size:11px;color:#8ba2be;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+    .product h3{font-size:17px;margin:6px 0 3px;line-height:1.25}
+    .specs{color:#9fb0c4;font-size:12px;margin-bottom:12px}
+    .price-row{display:flex;justify-content:space-between;gap:10px;align-items:end}
+    .price{font-size:20px;font-weight:950}
+    .old{font-size:11px;color:#7f91a8;text-decoration:line-through}
+    .emi{font-size:11px;color:#8ff0b7;font-weight:800;margin-top:2px}
+    .product-actions{display:grid;grid-template-columns:1fr 42px;gap:8px;margin-top:14px}
+    .mini-btn{border:0;border-radius:12px;padding:11px;background:#172942;color:white;font-weight:900;cursor:pointer}
+    .mini-btn.buy{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .empty{grid-column:1/-1;text-align:center;padding:45px;color:var(--muted);border:1px dashed var(--line);border-radius:18px}
+
+    .finance-wrap{
+      display:grid;grid-template-columns:1.03fr .97fr;gap:22px;align-items:stretch;
+      background:linear-gradient(145deg,#fff,#f4f7fb);color:#101827;border-radius:32px;padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .finance-logo{
+      width:60px;height:60px;border-radius:18px;background:#006cb7;color:#fff;display:grid;place-items:center;
+      font-weight:1000;font-size:23px;margin-bottom:18px;
+    }
+    .finance-wrap h2{font-size:40px;line-height:1.03;letter-spacing:-1.4px;margin:0 0 14px}
+    .finance-wrap p{color:#526176}
+    .finance-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}
+    .finance-point{padding:14px;background:#fff;border:1px solid #dde4ed;border-radius:15px;font-size:13px;font-weight:800}
+    .calc{background:#0d1a2c;color:white;border-radius:24px;padding:23px}
+    .calc h3{margin-top:0;font-size:22px}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .calc label{font-size:12px;color:#9eb0c6;font-weight:800;display:block;margin-bottom:6px}
+    .calc-result{
+      margin-top:14px;padding:17px;border-radius:16px;background:linear-gradient(135deg,rgba(255,61,84,.16),rgba(255,138,0,.12));
+      border:1px solid rgba(255,255,255,.09)
+    }
+    .calc-result small{color:#a9b8ca}
+    .calc-result strong{display:block;font-size:30px;line-height:1.1;margin:4px 0}
+    .fineprint{font-size:11px!important;color:#66758a!important;margin-top:14px!important}
+
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feature{padding:22px;border-radius:20px;background:#0e1c2e;border:1px solid var(--line)}
+    .feature-icon{width:44px;height:44px;border-radius:13px;background:#192b44;display:grid;place-items:center;font-weight:950;color:#ff9b50;margin-bottom:14px}
+    .feature h3{margin:0 0 7px;font-size:17px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
+
+    .accessories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .accessory{min-height:190px;border-radius:22px;padding:20px;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(145deg,#111f35,#0a1728)}
+    .accessory b{font-size:20px;display:block}
+    .accessory span{color:var(--muted);font-size:13px}
+    .shape{position:absolute;width:120px;height:120px;border-radius:32px;background:linear-gradient(145deg,#263a58,#101b2e);right:-20px;bottom:-28px;transform:rotate(20deg);border:1px solid rgba(255,255,255,.1)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{padding:22px;border-radius:20px;border:1px solid var(--line);background:#0d1b2d}
+    .step-num{font-size:12px;color:#ff9950;font-weight:950;letter-spacing:1px}
+    .step h3{margin:8px 0 6px}
+    .step p{margin:0;color:var(--muted);font-size:13px}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .review{padding:22px;border-radius:20px;border:1px solid var(--line);background:#0d1b2d}
+    .stars{letter-spacing:2px;color:#ffb357;font-size:14px}
+    .review p{color:#c2cede;font-size:14px}
+    .review small{color:var(--muted)}
+
+    .faq{display:grid;gap:10px}
+    details{border:1px solid var(--line);border-radius:16px;background:#0d1b2d;padding:0 18px}
+    summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:900}
+    details p{color:var(--muted);font-size:14px;margin:0 0 17px}
+    summary::-webkit-details-marker{display:none}
+
+    .contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:18px}
+    .contact-card,.map-card{padding:25px;border-radius:24px;border:1px solid var(--line);background:#0d1b2d}
+    .contact-list{display:grid;gap:12px;margin:20px 0}
+    .contact-item{padding:14px;border-radius:14px;background:#12243a;border:1px solid rgba(255,255,255,.06)}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:3px}
+    .map-card{min-height:310px;display:grid;place-items:center;text-align:center;background:
+      linear-gradient(rgba(7,17,31,.82),rgba(7,17,31,.82)),
+      repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.035) 35px),
+      repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.035) 35px);}
+    .map-pin{width:70px;height:70px;border-radius:50% 50% 50% 0;background:var(--brand);transform:rotate(-45deg);margin:auto;display:grid;place-items:center;box-shadow:0 20px 45px rgba(255,61,84,.25)}
+    .map-pin::after{content:"";width:22px;height:22px;border-radius:50%;background:white}
+    .map-card h3{margin:22px 0 4px}
+
+    footer{border-top:1px solid var(--line);padding:34px 0 90px;color:#91a4bc}
+    .footer-grid{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap;font-size:13px}
+
+    .whatsapp{
+      position:fixed;right:18px;bottom:18px;z-index:60;
+      width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+      background:#25D366;color:white;box-shadow:0 16px 40px rgba(37,211,102,.35);
+      font-weight:1000;font-size:22px;border:4px solid rgba(255,255,255,.16)
+    }
+
+    .modal{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;z-index:100;
+      background:rgba(0,0,0,.7);backdrop-filter:blur(8px)
+    }
+    .modal.open{display:flex}
+    .modal-box{width:min(520px,100%);background:#0d1b2d;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow)}
+    .modal-top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .close{background:#1a2d47;color:white;border:0;width:38px;height:38px;border-radius:12px;cursor:pointer}
+
+    @media (max-width:980px){
+      nav{display:none;position:absolute;left:16px;right:16px;top:78px;background:#0c192a;border:1px solid var(--line);border-radius:18px;padding:15px;flex-direction:column;align-items:stretch}
+      nav.open{display:flex}
+      .menu-btn{display:block}
+      .nav-cta{display:none}
+      .hero-grid,.finance-wrap,.contact-grid{grid-template-columns:1fr}
+      .hero-card{min-height:440px}
+      .brand-row{grid-template-columns:repeat(4,1fr)}
+      .products{grid-template-columns:repeat(3,1fr)}
+      .features,.accessories,.steps{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:700px){
+      .top-strip{font-size:11px}
+      .container{width:min(100% - 22px,var(--max))}
+      .nav{height:68px}
+      .logo-mark{width:42px;height:42px}
+      .logo-copy b{font-size:15px}
+      .hero{padding:44px 0 20px}
+      h1{font-size:45px;letter-spacing:-2px}
+      .hero p{font-size:15px}
+      .hero-card{min-height:390px}
+      .phone{width:178px;height:332px;border-radius:34px}
+      .phone-small{width:118px;height:224px}
+      .floating-offer{width:145px;top:82px}
+      .brand-row{grid-template-columns:repeat(2,1fr)}
+      section{padding:58px 0}
+      .section-head{align-items:start;flex-direction:column}
+      .catalog-tools{grid-template-columns:1fr 1fr}
+      .catalog-tools .searchbox{grid-column:1/-1}
+      select{min-width:0}
+      .products{grid-template-columns:repeat(2,1fr);gap:10px}
+      .product-visual{height:175px}
+      .product-phone{width:86px;height:146px}
+      .product-body{padding:13px}
+      .product h3{font-size:14px}
+      .price{font-size:17px}
+      .finance-wrap{padding:18px;border-radius:24px}
+      .finance-wrap h2{font-size:31px}
+      .finance-points,.calc-grid{grid-template-columns:1fr}
+      .features,.accessories,.steps,.reviews{grid-template-columns:1fr}
+      .footer-grid{flex-direction:column}
+    }
+    @media (max-width:390px){
+      .products{grid-template-columns:1fr}
+      .catalog-tools{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    SATYAM MOBILE SHOP - SINGLE FILE WEBSITE
+    ==========================================================
+    QUICK EDIT BEFORE PUBLISHING:
+    1) Replace phone/WhatsApp: 917000702558
+    2) Replace address: "Naigarhi Thana ke Samne, Naigarhi, Madhya Pradesh"
+    3) Google Maps link currently opens a search for Naigarhi Thana
+    4) Update products/prices inside the JavaScript "products" array.
+    5) If you have an original logo, replace the .logo-mark block with an <img>.
+    ==========================================================
+  -->
+
+  <div class="top-strip">Latest smartphones • Exchange offers • Easy EMI options • Genuine accessories</div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="Satyam Mobile Shop home">
+        <div class="logo-mark">SM</div>
+        <div class="logo-copy">
+          <b>Satyam Mobile Shop</b>
+          <span>SMARTPHONES • EMI • ACCESSORIES</span>
+        </div>
+      </a>
+
+      <nav id="navMenu">
+        <a href="#phones">Mobiles</a>
+        <a href="#finance">Bajaj Finance</a>
+        <a href="#accessories">Accessories</a>
+        <a href="#offers">Offers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="nav-cta" href="https://wa.me/917000702558?text=Hello%20Satyam%20Mobile%20Shop%2C%20I%20want%20to%20buy%20a%20mobile." target="_blank">WhatsApp Enquiry</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">IN-STORE DEALS • EASY EMI OPTIONS</div>
+          <h1>Your Next Phone Starts at <span>Satyam.</span></h1>
+          <p>Latest smartphones from Apple, Samsung, OnePlus, vivo, OPPO, realme, Redmi and more — with exchange assistance, genuine accessories and flexible EMI options.</p>
+          <div class="hero-actions">
+            <a href="#phones" class="btn btn-primary">Explore Mobiles</a>
+            <a href="#finance" class="btn btn-secondary">Check EMI Options</a>
+          </div>
+          <div class="hero-note">
+            <span class="tick">Top smartphone brands</span>
+            <span class="tick">Exchange assistance</span>
+            <span class="tick">After-sales guidance</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Smartphone offer visual">
+          <span class="offer-pill">New Arrivals Available</span>
+          <div class="floating-offer">
+            <small>Shop smarter with</small>
+            <b>Easy EMI</b>
+            <small>Subject to eligibility & scheme</small>
+          </div>
+          <div class="phone-stage">
+            <div class="phone"><div class="screen"><div class="dynamic"></div></div></div>
+            <div class="phone-small"><div class="camera"><div class="lens"></div><div class="lens"></div><div class="lens"></div><div class="lens"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brands">
+      <div class="container brand-row">
+        <div class="brand-chip">Apple</div>
+        <div class="brand-chip">Samsung</div>
+        <div class="brand-chip">OnePlus</div>
+        <div class="brand-chip">vivo</div>
+        <div class="brand-chip">OPPO</div>
+        <div class="brand-chip">realme</div>
+        <div class="brand-chip">Redmi</div>
+        <div class="brand-chip">Motorola</div>
+      </div>
+    </div>
+
+    <section id="phones">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Smartphone Collection</div>
+            <h2>Popular mobiles in one place.</h2>
+            <p>This demo catalog is built for a mobile-shop website. Change model names, stock and prices anytime from the product list inside the HTML file.</p>
+          </div>
+        </div>
+
+        <div style="margin:0 0 20px;padding:13px 15px;border:1px solid rgba(59,130,246,.25);background:rgba(59,130,246,.08);border-radius:14px;color:#bcd3f5;font-size:12px">
+          Real product photos load from the <b>images</b> folder. If a photo is missing, a fallback phone graphic appears automatically.
+        </div>
+
+        <div class="catalog-tools">
+          <input id="search" class="searchbox" type="search" placeholder="Search model or brand..." aria-label="Search phones" />
+          <select id="brandFilter" aria-label="Filter by brand">
+            <option value="all">All Brands</option>
+          </select>
+          <select id="sortBy" aria-label="Sort phones">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+
+        <div class="products" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section id="finance">
+      <div class="container">
+        <div class="finance-wrap">
+          <div>
+            <div class="finance-logo">B</div>
+            <div class="label" style="color:#006cb7">Finance Options</div>
+            <h2>Bajaj Finance EMI information</h2>
+            <p>Eligible customers may be able to purchase smartphones through Bajaj Finance EMI options at participating stores. Available tenure, down payment, interest, processing fees and approval can vary by customer, product and scheme.</p>
+
+            <div class="finance-points">
+              <div class="finance-point">Flexible repayment tenure may be available</div>
+              <div class="finance-point">Selected products may have low / zero down-payment schemes</div>
+              <div class="finance-point">OTP / KYC / mandate may be required</div>
+              <div class="finance-point">Final approval remains with Bajaj Finance</div>
+            </div>
+
+            <a href="https://wa.me/917000702558?text=Hello%20Satyam%20Mobile%20Shop%2C%20I%20want%20Bajaj%20Finance%20EMI%20details." class="btn btn-primary" target="_blank">Ask Store for EMI Eligibility</a>
+            <p class="fineprint">Important: Bajaj Finance charges and scheme terms can change. Displayed information is general and not a loan approval or guaranteed no-cost EMI offer. Confirm the applicable Key Fact Statement / loan terms before purchase.</p>
+          </div>
+
+          <div class="calc">
+            <h3>Quick EMI Estimate</h3>
+            <p style="color:#9eb0c6;font-size:13px">Simple 0% illustrative split for planning only.</p>
+            <div class="calc-grid">
+              <div>
+                <label>Phone price (₹)</label>
+                <input id="amount" type="number" min="1000" value="30000" />
+              </div>
+              <div>
+                <label>Tenure</label>
+                <select id="months" style="width:100%">
+                  <option value="3">3 months</option>
+                  <option value="6" selected>6 months</option>
+                  <option value="9">9 months</option>
+                  <option value="12">12 months</option>
+                  <option value="18">18 months</option>
+                  <option value="24">24 months</option>
+                </select>
+              </div>
+            </div>
+            <div class="calc-result">
+              <small>Illustrative monthly split</small>
+              <strong id="emiResult">₹5,000/mo</strong>
+              <small>Actual EMI may differ because of applicable interest, fees, advance EMI, down payment or scheme conditions.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offers">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Why Satyam Mobile Shop</div>
+            <h2>Everything you need for your next phone.</h2>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature"><div class="feature-icon">01</div><h3>Multi-brand range</h3><p>Compare popular Android and iPhone models across multiple price segments.</p></div>
+          <div class="feature"><div class="feature-icon">02</div><h3>Exchange support</h3><p>Bring your current handset and ask the store team for an exchange valuation.</p></div>
+          <div class="feature"><div class="feature-icon">03</div><h3>EMI assistance</h3><p>Get help understanding eligible EMI options and documents at the store.</p></div>
+          <div class="feature"><div class="feature-icon">04</div><h3>Accessories</h3><p>Cases, screen protection, chargers, cables, earbuds and everyday essentials.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Accessories</div>
+            <h2>Complete your mobile setup.</h2>
+            <p>Add your actual accessory brands, prices and offers here.</p>
+          </div>
+        </div>
+        <div class="accessories">
+          <div class="accessory"><b>Fast Chargers</b><span>Adapters, Type-C & fast charging options</span><div class="shape"></div></div>
+          <div class="accessory"><b>TWS Earbuds</b><span>Wireless audio for calls, music and gaming</span><div class="shape"></div></div>
+          <div class="accessory"><b>Cases & Covers</b><span>Protection and style for popular models</span><div class="shape"></div></div>
+          <div class="accessory"><b>Screen Guard</b><span>Tempered glass and display protection</span><div class="shape"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">How it works</div>
+            <h2>Buy your phone in four simple steps.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">STEP 01</div><h3>Choose a phone</h3><p>Browse models online or visit the shop to compare devices.</p></div>
+          <div class="step"><div class="step-num">STEP 02</div><h3>Check offer</h3><p>Confirm latest store price, exchange value and available scheme.</p></div>
+          <div class="step"><div class="step-num">STEP 03</div><h3>Select payment</h3><p>Pay normally or ask for eligible EMI / finance options.</p></div>
+          <div class="step"><div class="step-num">STEP 04</div><h3>Take your phone</h3><p>Complete billing, activation guidance and accessory setup.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Customer Reviews</div>
+            <h2>Build trust with real customer feedback.</h2>
+            <p>Replace these demo reviews with genuine Google/WhatsApp customer reviews before publishing.</p>
+          </div>
+        </div>
+        <div class="reviews">
+          <div class="review"><div class="stars">★★★★★</div><p>“Good collection and the team explained the available phone options clearly.”</p><b>Demo Customer</b><br><small>Replace with real review</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Quick purchase experience and useful guidance for accessories and setup.”</p><b>Demo Customer</b><br><small>Replace with real review</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Helpful staff and multiple models available to compare in one place.”</p><b>Demo Customer</b><br><small>Replace with real review</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">FAQ</div>
+            <h2>Common questions.</h2>
+          </div>
+        </div>
+        <div class="faq">
+          <details open><summary>Do you provide mobiles on EMI?</summary><p>EMI/finance options can be shown for eligible customers and products. Final approval, tenure, charges and down payment depend on the financing partner and applicable scheme.</p></details>
+          <details><summary>Is Bajaj Finance available on every phone?</summary><p>Not necessarily. Availability can vary by store participation, product, scheme and customer eligibility. Confirm the current option with the shop before purchase.</p></details>
+          <details><summary>Can I exchange my old phone?</summary><p>You can advertise exchange assistance here. Final exchange value should be decided after checking model, age, condition, display, battery and device functionality.</p></details>
+          <details><summary>Are online prices and shop prices always the same?</summary><p>No. Smartphone prices and offers change frequently. The final invoice price should be confirmed with the shop on the day of purchase.</p></details>
+          <details><summary>Can I reserve a phone on WhatsApp?</summary><p>Yes. Use the WhatsApp button on this website to ask the shop about current stock, color, storage and booking policy.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Visit / Contact</div>
+            <h2>Satyam Mobile Shop</h2>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 style="font-size:28px;margin-top:0">Talk to the shop</h3>
+            <p style="color:var(--muted)">Replace the sample details below with the shop's real information before publishing.</p>
+            <div class="contact-list">
+              <div class="contact-item"><small>Phone / WhatsApp</small><b>+91 70007 02558</b></div>
+              <div class="contact-item"><small>Address</small><b>Naigarhi Thana ke Samne, Naigarhi, Madhya Pradesh</b></div>
+              <div class="contact-item"><small>Opening Hours</small><b>Mon–Sun • 10:00 AM – 9:00 PM</b></div>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+917000702558">Call Now</a>
+              <a class="btn btn-secondary" target="_blank" href="https://wa.me/917000702558?text=Hello%20Satyam%20Mobile%20Shop">WhatsApp</a>
+            </div>
+          </div>
+
+          <a class="map-card" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Naigarhi+Thana+Naigarhi+Madhya+Pradesh" aria-label="Open Google Maps">
+            <div>
+              <div class="map-pin"></div>
+              <h3>Open Location in Google Maps</h3>
+              <p style="color:var(--muted);margin-top:4px">Replace this link with the shop's Google Maps location.</p>
+              <span class="btn btn-secondary" style="margin-top:10px">Get Directions</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px">
+          <div class="logo-mark">SM</div>
+          <div class="logo-copy"><b>Satyam Mobile Shop</b><span>SMARTPHONES • EMI • ACCESSORIES</span></div>
+        </div>
+        <small>© <span id="year"></span> Satyam Mobile Shop. All rights reserved.</small>
+      </div>
+      <div class="footer-links">
+        <a href="#phones">Mobiles</a><a href="#finance">Finance</a><a href="#accessories">Accessories</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/917000702558?text=Hello%20Satyam%20Mobile%20Shop%2C%20I%20want%20mobile%20details." target="_blank" aria-label="WhatsApp">W</a>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div>
+          <div class="label" id="modalBrand">Brand</div>
+          <h2 id="modalTitle" style="margin:4px 0 0">Phone</h2>
+        </div>
+        <button class="close" id="closeModal">×</button>
+      </div>
+      <p id="modalSpecs" style="color:var(--muted)"></p>
+      <div class="contact-item"><small>Demo website price</small><b id="modalPrice"></b></div>
+      <p class="fineprint">Stock, price, offer, finance eligibility and invoice value must be confirmed with the shop.</p>
+      <a id="modalWhatsApp" class="btn btn-primary" target="_blank" style="width:100%;margin-top:10px">Ask on WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================
+    // EDIT PRODUCTS HERE
+    // "price" values below are DEMO / WEBSITE PLACEHOLDER PRICES.
+    // Replace them with your shop's actual current prices & stock.
+    // =========================================================
+    const products = [
+      {brand:"Apple", name:"iPhone 18 Pro", specs:"Premium iPhone • Multiple storage options", price:164900, old:169900, badge:"Premium", image:"images/iphone-18-pro.webp"},
+      {brand:"Apple", name:"iPhone 18", specs:"Latest-generation iPhone • Multiple colors", price:99900, old:104900, badge:"New", image:"images/iphone-18.webp"},
+      {brand:"Apple", name:"iPhone 17", specs:"256GB / 512GB options", price:99900, old:104900, badge:"Popular", image:"images/iphone-17.webp"},
+      {brand:"Apple", name:"iPhone 17e", specs:"Everyday iPhone • Multiple storage options", price:79900, old:84900, badge:"Value", image:"images/iphone-17e.webp"},
+
+      {brand:"Samsung", name:"Galaxy S26 Ultra", specs:"Flagship Galaxy • High-end camera & display", price:139999, old:149999, badge:"Flagship", image:"images/galaxy-s26-ultra.webp"},
+      {brand:"Samsung", name:"Galaxy S26", specs:"Premium Galaxy • Compact flagship class", price:84999, old:89999, badge:"New", image:"images/galaxy-s26.webp"},
+      {brand:"Samsung", name:"Galaxy A56 5G", specs:"5G • AMOLED class • Everyday performance", price:41999, old:44999, badge:"Popular", image:"images/galaxy-a56-5g.webp"},
+      {brand:"Samsung", name:"Galaxy M-Series 5G", specs:"Large battery • 5G • Value segment", price:18999, old:20999, badge:"Budget", image:"images/galaxy-m-series-5g.webp"},
+
+      {brand:"OnePlus", name:"OnePlus 15", specs:"12GB + 256GB class • Flagship performance", price:85999, old:89999, badge:"Performance", image:"images/oneplus-15.webp"},
+      {brand:"OnePlus", name:"OnePlus 15R", specs:"Performance-focused 5G smartphone", price:52999, old:56999, badge:"Fast", image:"images/oneplus-15r.webp"},
+
+      {brand:"vivo", name:"vivo X Series", specs:"Premium camera-focused 5G smartphone", price:74999, old:79999, badge:"Camera", image:"images/vivo-x-series.webp"},
+      {brand:"vivo", name:"vivo V Series", specs:"Stylish 5G • Portrait-focused camera", price:34999, old:37999, badge:"Popular", image:"images/vivo-v-series.webp"},
+
+      {brand:"OPPO", name:"OPPO Find X Series", specs:"Premium 5G • Flagship camera system", price:69999, old:74999, badge:"Premium", image:"images/oppo-find-x-series.webp"},
+      {brand:"OPPO", name:"OPPO Reno Series", specs:"Slim design • Portrait camera • 5G", price:38999, old:41999, badge:"Trending", image:"images/oppo-reno-series.webp"},
+
+      {brand:"realme", name:"realme GT Series", specs:"Performance-focused 5G smartphone", price:45999, old:49999, badge:"Gaming", image:"images/realme-gt-series.webp"},
+      {brand:"realme", name:"realme Number Series", specs:"Balanced 5G smartphone • Value segment", price:25999, old:28999, badge:"Value", image:"images/realme-number-series.webp"},
+
+      {brand:"Redmi", name:"Redmi Note Pro+ 5G", specs:"High-resolution camera • Fast charging", price:31999, old:34999, badge:"Popular", image:"images/redmi-note-pro-plus-5g.webp"},
+      {brand:"Redmi", name:"Redmi Note 5G", specs:"5G • Big display • Everyday performance", price:19999, old:21999, badge:"Budget", image:"images/redmi-note-5g.webp"},
+
+      {brand:"Motorola", name:"Motorola Edge Series", specs:"Clean Android experience • 5G", price:32999, old:35999, badge:"Sleek", image:"images/motorola-edge-series.webp"},
+      {brand:"Motorola", name:"Moto G Series 5G", specs:"Value 5G • Everyday smartphone", price:17999, old:19999, badge:"Value", image:"images/moto-g-series-5g.webp"}
+    ];
+
+    const grid = document.getElementById("productGrid");
+    const search = document.getElementById("search");
+    const brandFilter = document.getElementById("brandFilter");
+    const sortBy = document.getElementById("sortBy");
+    const inr = new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0});
+
+    [...new Set(products.map(p=>p.brand))].forEach(brand=>{
+      const o=document.createElement("option");
+      o.value=brand;o.textContent=brand;
+      brandFilter.appendChild(o);
+    });
+
+    function renderProducts(){
+      const q=search.value.trim().toLowerCase();
+      const brand=brandFilter.value;
+      let list=products.filter(p=>{
+        const matchText=(p.brand+" "+p.name+" "+p.specs).toLowerCase().includes(q);
+        return matchText && (brand==="all" || p.brand===brand);
+      });
+      if(sortBy.value==="low") list.sort((a,b)=>a.price-b.price);
+      if(sortBy.value==="high") list.sort((a,b)=>b.price-a.price);
+
+      if(!list.length){
+        grid.innerHTML='<div class="empty">No matching phones found. Try another model or brand.</div>';
+        return;
+      }
+
+      grid.innerHTML=list.map((p,i)=>`
+        <article class="product">
+          <div class="product-visual">
+            <span class="badge">${p.badge}</span>
+            <img
+              src="${p.image}"
+              alt="${p.name}"
+              class="real-phone-image"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <div class="product-image-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">${p.brand}</div>
+            <h3>${p.name}</h3>
+            <div class="specs">${p.specs}</div>
+            <div class="price-row">
+              <div>
+                <div class="price">${inr.format(p.price)}</div>
+                <div class="old">${inr.format(p.old)}</div>
+                <div class="emi">Illustrative split from ${inr.format(Math.ceil(p.price/12))}/mo*</div>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="mini-btn buy" onclick="openProduct('${p.name.replaceAll("'","\\'")}')">View / Enquire</button>
+              <button class="mini-btn" title="WhatsApp" onclick="askWhatsApp('${p.name.replaceAll("'","\\'")}')">W</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    search.addEventListener("input",renderProducts);
+    brandFilter.addEventListener("change",renderProducts);
+    sortBy.addEventListener("change",renderProducts);
+    renderProducts();
+
+    const amount=document.getElementById("amount");
+    const months=document.getElementById("months");
+    const result=document.getElementById("emiResult");
+
+    function calcEMI(){
+      const a=Math.max(0,Number(amount.value)||0);
+      const m=Math.max(1,Number(months.value)||1);
+      result.textContent=inr.format(Math.ceil(a/m))+"/mo";
+    }
+    amount.addEventListener("input",calcEMI);
+    months.addEventListener("change",calcEMI);
+    calcEMI();
+
+    const modal=document.getElementById("modal");
+    function openProduct(name){
+      const p=products.find(x=>x.name===name);
+      if(!p)return;
+      document.getElementById("modalBrand").textContent=p.brand;
+      document.getElementById("modalTitle").textContent=p.name;
+      document.getElementById("modalSpecs").textContent=p.specs;
+      document.getElementById("modalPrice").textContent=inr.format(p.price)+" (demo price)";
+      document.getElementById("modalWhatsApp").href="https://wa.me/917000702558?text="+encodeURIComponent("Hello Satyam Mobile Shop, I want latest price, stock and EMI details for "+p.name+".");
+      modal.classList.add("open");
+    }
+    window.openProduct=openProduct;
+
+    function askWhatsApp(name){
+      window.open("https://wa.me/917000702558?text="+encodeURIComponent("Hello Satyam Mobile Shop, I want latest price, stock and EMI details for "+name+"."),"_blank");
+    }
+    window.askWhatsApp=askWhatsApp;
+
+    document.getElementById("closeModal").onclick=()=>modal.classList.remove("open");
+    modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("open")});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("open")});
+
+    const navMenu=document.getElementById("navMenu");
+    document.getElementById("menuBtn").onclick=()=>navMenu.classList.toggle("open");
+    navMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navMenu.classList.remove("open")));
+
+    document.getElementById("year").textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
